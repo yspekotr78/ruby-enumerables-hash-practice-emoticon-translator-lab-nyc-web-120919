@@ -21,11 +21,11 @@ def load_library(emoticon_file)
   emoticon_libray = {"get_meaning"  => {},
                      "get_emoticon" => {}}
 
-  emoticons.each do |meaning, value|  
+  emoticons.each do |meaning, values|  
     # meaning="angel" 
-    #value= ["O:)", "☜(⌒▽⌒)☞"]  
-    english = value[0]
-    japanese = value[1]
+    #values= ["O:)", "☜(⌒▽⌒)☞"]  
+    english = values[0]
+    japanese = values[1]
     emoticon_libray["get_meaning"][japanese] = meaning
     emoticon_libray["get_emoticon"][english] = japanese
   end
@@ -63,7 +63,7 @@ end
 
 def get_japanese_emoticon(emoticon_file, eng_emoticon)
   hash = load_library(emoticon_file)
-  if hash["get_emoticon"][eng_emoticon] == nil
+  if hash["get_emoticon"][eng_emoticon] <> eng_emoticon
     return "Sorry, that emoticon was not found"
   else return hash["get_emoticon"][eng_emoticon]
   end
