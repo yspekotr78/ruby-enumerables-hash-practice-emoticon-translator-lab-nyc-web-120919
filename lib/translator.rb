@@ -19,7 +19,7 @@ def load_library(emoticon_file)
   # code goes here	 
   emoticons = YAML.load_file('./lib/emoticons.yml')
   emoticon_libray = {"get_meaning"  => {}}
-                     "get_emoticon" => {} }
+  emoticon_libray = {"get_emoticon" => {} }
 
   emoticons.each do |meaning, value|  
     # meaning="angel" 
